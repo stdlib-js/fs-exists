@@ -242,6 +242,23 @@ true || <error_message>
 
 <!-- /.cli -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/fs/read-file`][@stdlib/fs/read-file]: read the entire contents of a file.
+-   [`@stdlib/fs/read-dir`][@stdlib/fs/read-dir]: read the entire contents of a directory.
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 
 <section class="main-repo" >
 
@@ -298,6 +315,14 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/fs-exists/main/LICENSE
 
 [node-fs-exists]: https://nodejs.org/api/fs.html#fs_fs_exists_path_callback
+
+<!-- <related-links> -->
+
+[@stdlib/fs/read-file]: https://github.com/stdlib-js/fs-read-file
+
+[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir
+
+<!-- </related-links> -->
 
 </section>
 
