@@ -1,4 +1,0 @@
-// Copyright (c) 2022 The Stdlib Authors. License is Apache-2.0: http://www.apache.org/licenses/LICENSE-2.0
-/// <reference types="./index.d.ts" />
-import e from"https://cdn.jsdelivr.net/gh/stdlib-js/utils-define-nonenumerable-read-only-property@esm/index.mjs";function t(e){if(e.__esModule)return e;var t=Object.defineProperty({},"__esModule",{value:!0});return Object.keys(e).forEach((function(n){var r=Object.getOwnPropertyDescriptor(e,n);Object.defineProperty(t,n,r.get?r:{enumerable:!0,get:function(){return e[n]}})})),t}var n,r=t(Object.freeze({__proto__:null,default:{}})),c=r;n="function"==typeof c.access?c.access:c.stat;var u,o=function(e,t){n(e,(function(e){if(2===t.length)return e?t(e,!1):t(null,!0);if(e)return t(!1);return t(!0)}))},s=r;u="function"==typeof s.accessSync?s.accessSync:s.statSync;var a=o,f=function(e){try{u(e)}catch(e){return!1}return!0};e(a,"sync",f);var i=a;export{i as default,f as sync};
-//# sourceMappingURL=index.mjs.map
