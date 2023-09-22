@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-deno/mod.js';
 ```
 
 #### exists( path, clbk )
@@ -159,7 +159,7 @@ var bool = exists.sync( __dirname );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-deno/mod.js';
 
 /* Sync */
 
