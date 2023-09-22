@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-esm/index.mjs';
 ```
 
 #### exists( path, clbk )
@@ -164,7 +164,7 @@ var bool = exists.sync( __dirname );
 <body>
 <script type="module">
 
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-esm/index.mjs';
 
 /* Sync */
 
