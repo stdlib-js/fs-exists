@@ -35,25 +35,31 @@ limitations under the License.
 
 > Test whether a path exists on the filesystem.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fs-exists
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-exists/tags). For example,
-
-```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.0-esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+var exists = require( '@stdlib/fs-exists' );
 ```
 
 #### exists( path, clbk )
@@ -110,7 +116,7 @@ var bool = exists.sync( __dirname );
 
     ```javascript
     var path = require( 'path' );
-    var readFileSync = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file' ).sync;
+    var readFileSync = require( '@stdlib/fs-read-file' ).sync;
 
     var file = path.join( __dirname, 'foo.js' );
     if ( exists.sync( __dirname ) ) {
@@ -124,7 +130,7 @@ var bool = exists.sync( __dirname );
 
     ```javascript
     var path = require( 'path' );
-    var readFileSync = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file' ).sync;
+    var readFileSync = require( '@stdlib/fs-read-file' ).sync;
 
     var file = path.join( __dirname, 'foo.js' );
     try {
@@ -141,7 +147,7 @@ var bool = exists.sync( __dirname );
 
     ```javascript
     var path = require( 'path' );
-    var writeFileSync = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-write-file' ).sync;
+    var writeFileSync = require( '@stdlib/fs-write-file' ).sync;
 
     var file = path.join( __dirname, 'foo.js' );
     if ( exists.sync( file ) ) {
@@ -163,13 +169,8 @@ var bool = exists.sync( __dirname );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+```javascript
+var exists = require( '@stdlib/fs-exists' );
 
 /* Sync */
 
@@ -191,17 +192,77 @@ function done( error, bool ) {
         console.log( bool );
     }
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/fs-exists-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: exists [options] <path>
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+### Notes
+
+-   Relative paths are resolved relative to the current working directory.
+-   Errors are written to `stderr`.
+-   Results are written to `stdout`.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ exists ./../
+true || <error_message>
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -227,7 +288,7 @@ function done( error, bool ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -257,8 +318,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/fs-exists.svg
 [npm-url]: https://npmjs.org/package/@stdlib/fs-exists
 
-[test-image]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-exists/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-exists?branch=main
@@ -295,9 +356,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/fs/read-file]: https://github.com/stdlib-js/fs-read-file/tree/esm
+[@stdlib/fs/read-file]: https://github.com/stdlib-js/fs-read-file
 
-[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir/tree/esm
+[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir
 
 <!-- </related-links> -->
 
