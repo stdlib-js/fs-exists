@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-exists/tags). For example,
+
+```javascript
 import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.1-esm/index.mjs';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
 ```
 
 #### exists( path, clbk )
@@ -164,7 +169,7 @@ var bool = exists.sync( __dirname );
 <body>
 <script type="module">
 
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.1.1-esm/index.mjs';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@esm/index.mjs';
 
 /* Sync */
 
