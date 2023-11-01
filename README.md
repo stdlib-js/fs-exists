@@ -35,174 +35,19 @@ limitations under the License.
 
 > Test whether a path exists on the filesystem.
 
-<section class="installation">
 
-## Installation
 
-```bash
-npm install @stdlib/fs-exists
-```
 
-Alternatively,
 
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
--   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
-</section>
 
-<section class="usage">
 
-## Usage
 
-```javascript
-var exists = require( '@stdlib/fs-exists' );
-```
-
-#### exists( path, clbk )
-
-Asynchronously tests whether a path exists on the filesystem.
-
-```javascript
-exists( __dirname, done );
-
-function done( bool ) {
-    if ( bool ) {
-        console.log( '...path exists.' );
-    } else {
-        console.log( '...path does not exist.' );
-    }
-}
-```
-
-The above callback signature matches the now **deprecated** [`fs.exists()`][node-fs-exists] API. The function also accepts the more conventional `error`-first style callback signature found in most asynchronous Node APIs.
-
-```javascript
-exists( __dirname, done );
-
-function done( error, bool ) {
-    if ( error ) {
-        console.error( error.message );
-    }
-    if ( bool ) {
-        console.log( '...path exists.' );
-    } else {
-        console.log( '...path does not exist.' );
-    }
-}
-```
-
-#### exists.sync( path )
-
-Synchronously tests whether a path exists on the filesystem.
-
-```javascript
-var bool = exists.sync( __dirname );
-// returns <boolean>
-```
-
-</section>
-
-<!-- /.usage -->
-
-<section class="notes">
-
-## Notes
-
--   The following is considered an anti-pattern:
-
-    ```javascript
-    var path = require( 'path' );
-    var readFileSync = require( '@stdlib/fs-read-file' ).sync;
-
-    var file = path.join( __dirname, 'foo.js' );
-    if ( exists.sync( __dirname ) ) {
-        file = readFileSync( file );
-    }
-    ```
-
-    Because time elapses between checking for existence and performing IO, at the time IO is performed, the path is no longer guaranteed to exist. In other words, a race condition exists between the process attempting to read and another process attempting to delete.
-
-    Instead, the following pattern is preferred, where `errors` are handled explicitly:
-
-    ```javascript
-    var path = require( 'path' );
-    var readFileSync = require( '@stdlib/fs-read-file' ).sync;
-
-    var file = path.join( __dirname, 'foo.js' );
-    try {
-        file = readFileSync( file );
-    } catch ( error ) {
-        console.log( 'unable to read file.' );
-        console.error( error );
-    }
-    ```
-
--   Nevertheless, use cases exist where one desires to check existence **without** performing IO. For example,
-
-    <!-- run-disable -->
-
-    ```javascript
-    var path = require( 'path' );
-    var writeFileSync = require( '@stdlib/fs-write-file' ).sync;
-
-    var file = path.join( __dirname, 'foo.js' );
-    if ( exists.sync( file ) ) {
-        console.log( 'Don\'t overwrite the file!' );
-    } else {
-        writeFileSync( file, 'beep', {
-            'encoding': 'utf8'
-        });
-    }
-    ```
-
-</section>
-
-<!-- /.notes -->
-
-<section class="examples">
-
-## Examples
-
-<!-- eslint no-undef: "error" -->
-
-```javascript
-var exists = require( '@stdlib/fs-exists' );
-
-/* Sync */
-
-console.log( exists.sync( __dirname ) );
-// => true
-
-console.log( exists.sync( 'beepboop' ) );
-// => false
-
-/* Async */
-
-exists( __dirname, done );
-exists( 'beepboop', done );
-
-function done( error, bool ) {
-    if ( error ) {
-        console.error( error.message );
-    } else {
-        console.log( bool );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-* * *
 
 <section class="cli">
 
-## CLI
+
 
 <section class="installation">
 
@@ -220,7 +65,7 @@ npm install -g @stdlib/fs-exists-cli
 
 <section class="usage">
 
-### Usage
+## Usage
 
 ```text
 Usage: exists [options] <path>
@@ -237,7 +82,7 @@ Options:
 
 <section class="notes">
 
-### Notes
+## Notes
 
 -   Relative paths are resolved relative to the current working directory.
 -   Errors are written to `stderr`.
@@ -249,7 +94,7 @@ Options:
 
 <section class="examples">
 
-### Examples
+## Examples
 
 ```bash
 $ exists ./../
@@ -268,10 +113,9 @@ true || <error_message>
 
 <section class="related">
 
-* * *
-
 ## See Also
 
+-   <span class="package-name">[`@stdlib/fs-exists`][@stdlib/fs-exists]</span><span class="delimiter">: </span><span class="description">test whether a path exists on the filesystem.</span>
 -   <span class="package-name">[`@stdlib/fs-read-file`][@stdlib/fs/read-file]</span><span class="delimiter">: </span><span class="description">read the entire contents of a file.</span>
 -   <span class="package-name">[`@stdlib/fs-read-dir`][@stdlib/fs/read-dir]</span><span class="delimiter">: </span><span class="description">read the entire contents of a directory.</span>
 
@@ -292,7 +136,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-#### Community
+### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -315,8 +159,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-exists.svg
-[npm-url]: https://npmjs.org/package/@stdlib/fs-exists
+[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-exists-cli.svg
+[npm-url]: https://npmjs.org/package/@stdlib/fs-exists-cli
 
 [test-image]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml/badge.svg?branch=main
 [test-url]: https://github.com/stdlib-js/fs-exists/actions/workflows/test.yml?query=branch:main
