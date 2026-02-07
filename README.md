@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-exists/tags). For example,
+
+```javascript
 import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.2.3-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.2.3-deno/mod.js';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
 ```
 
 #### exists( path, clbk )
@@ -159,7 +164,7 @@ var bool = exists.sync( __dirname );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@v0.2.3-deno/mod.js';
+import exists from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-exists@deno/mod.js';
 
 /* Sync */
 
